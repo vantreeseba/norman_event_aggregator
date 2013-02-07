@@ -1,32 +1,26 @@
 <!doctype html>
 <html>
   <head>
-    <title>rabbit.js and Socket.IO publish/subscribe example</title>
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
     <script>
-      function message(obj){
+      
+      var esc = function(msg){ return msg.replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+      
+      var handleMessage = function (obj){
         var el = document.createElement('p');
-        el.innerHTML = '<em>' + esc(obj) + '</em>'
-        document.getElementById('chat').appendChild(el);
-        document.getElementById('chat').scrollTop = 1000000;
-      }
+        el.innerHTML = esc(obj);
+        var chat = document.getElementById('chat');
+        chat.appendChild(el);
+        chat.scrollTop = 1000000;
+      }      
 
       var conn = io.connect();
-
-      function send(){
-        var val = document.getElementById('text').value;
-        conn.send(val);
-      }
-
-      function esc(msg){
-        return msg.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      };
-
-      conn.on('message', function(obj){
-        message(obj);
-      });
+      conn.on('message', handleMessage);
+      
+      var send = function() { conn.send(document.getElementById('text').value); }
+      
     </script>
 
     <div id="chat"></div>

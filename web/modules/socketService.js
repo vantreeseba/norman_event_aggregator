@@ -1,26 +1,21 @@
+var rabbitConf = require('../../rabbit.conf');
 var io = require('socket.io');
 
 exports.setupSocketIO = function(server, context){
 
-  var onConnect = function(connection) {
-    var pub = context.socket('PUB');
-    var sub = context.socket('SUB');
+  var pub = context.socket('PUSH');
 
-    connection.on('disconnect', function() {
-      pub.destroy();
-      sub.destroy();
+  context.on('ready',function(){
+    pub.connect(rabbitConf.chatQueue);
+  });
+
+  var onConnect = function(connection) {      
+    connection.on('message', function(msg) { 
+      connection.send(msg);
+      connection.broadcast.send(msg);
+        pub.write({text:msg}); 
     });
-
-    // NB we have to adapt between the APIs
-    sub.setEncoding('utf8');
-    connection.on('message', function(msg) { pub.write(msg); });
-    
-    sub.on('data', function(msg) { connection.send(msg); });
-    
-    sub.connect('chat');
-    pub.connect('chat');
   }
-  
 
   var socketioserver = io.listen(server);
   socketioserver.sockets.on('connection', onConnect);

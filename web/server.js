@@ -10,5 +10,5 @@ var server = http.createServer(app);
 app.use("/", express.static(__dirname));
 server.listen(3000);
 
-socketio.setUpSocketIO(server,context);
+socketio.setupSocketIO(server,context);
 
