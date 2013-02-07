@@ -1,0 +1,8 @@
+{
+	"name": "worker",
+	"version": "0.0.1",
+	"dependencies": {		
+		"rabbit.js":"*",
+		"mongoose":"*"
+	}
+}
