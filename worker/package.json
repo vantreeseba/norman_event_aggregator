@@ -1,8 +1,8 @@
 {
-	"name": "worker",
-	"version": "0.0.1",
-	"dependencies": {		
-		"rabbit.js":"*",
-		"mongoose":"*"
-	}
+  "name": "worker",
+  "version": "0.0.1",
+  "dependencies": {
+    "rabbit.js": "*",
+    "pg": "~2.11.0"
+  }
 }
