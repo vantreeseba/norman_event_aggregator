@@ -11,7 +11,7 @@ var pg = require('pg');
 //or native libpq bindings
 //var pg = require('pg').native
 
-var conString = "postgres://web_worker:11asterisks@10.10.0.20/web_worker";
+var conString = "postgres://web_worker:pass@10.10.0.20/web_worker";
 
 
 var handleMessage = function(msg) {	
