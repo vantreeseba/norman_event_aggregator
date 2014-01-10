@@ -12,7 +12,7 @@ app.use("/", express.static(__dirname));
 server.listen(8080);
 
 context.on('ready',function(){
-	console.log("Connecting to rabbitmq on: " + rabbitConf.host + " queue: " + rabbitConf.chatQueue)
+	console.log("Connected to rabbitmq on: " + rabbitConf.host + " queue: " + rabbitConf.chatQueue)
 	var pub = context.socket('PUSH');
 	pub.connect(rabbitConf.chatQueue);
 
