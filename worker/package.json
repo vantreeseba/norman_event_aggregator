@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "dependencies": {
     "rabbit.js": "*",
-    "pg": "~2.11.0"
+    "pg": "~2.11.0",
+    "async": "~0.2.9",
+    "request": "~2.31.0",
+    "cheerio": "~0.13.1"
   }
 }
