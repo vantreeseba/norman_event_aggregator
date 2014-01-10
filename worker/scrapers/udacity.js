@@ -3,16 +3,21 @@ var request = require('request')
   , async = require('async')
   , format = require('util').format;
 
-var reddits = [ 'programming', 'javascript', 'node' ]
-  , concurrency = 2;
+var reddits = ['programming'];
+var concurrency = 1;
 
 async.eachLimit(reddits, concurrency, function (reddit, next) {
-    var url = format('http://reddit.com/r/%s', reddit);
+    var url = format('https://www.udacity.com/courses');
     request(url, function (err, response, body) {
         if (err) throw err;
         var $ = cheerio.load(body);
-        $('a.title').each(function () {
-            console.log('%s (%s)', $(this).text(), $(this).attr('href'));
+        $('span.crs-li-info').each(function () {
+
+            var course = {
+              'Name' : $(this).find('.crs-li-title').text()
+            }
+
+            console.log(course);
         });
         next();
     });
