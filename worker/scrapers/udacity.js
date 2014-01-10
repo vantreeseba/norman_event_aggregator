@@ -14,7 +14,9 @@ async.eachLimit(reddits, concurrency, function (reddit, next) {
         $('span.crs-li-info').each(function () {
 
             var course = {
-              'Name' : $(this).find('.crs-li-title').text()
+              'Name' : $(this).find('.crs-li-title').text(),
+              'Category' : $(this).find('.crs-li-tags-category').text(),
+              'Description' : $(this).find('.crs-li-main-text').text()
             }
 
             console.log(course);
