@@ -1,0 +1,117 @@
+body
+{
+    line-height: 1;
+    font-size: 95%;
+    color: themeTextColor;
+    font-family: $baseFontFamily;
+    outline: none;    
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: normal;
+    margin: 0;
+}
+a {
+    outline: none; 
+
+}
+
+input {
+    height: $brickHeight;
+    line-height: $brickHeight;
+}
+
+::-ms-clear 
+{
+    display: none !important;
+    height:0;
+    width:0;
+}
+
+textarea {
+    line-height: $brickHeight - $brickPadding;
+}
+
+input, textarea {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: $brickPadding;
+    width: 99.9%;
+    min-height: $brickHeight;
+    padding:0;
+    margin:0 auto;
+    min-height: $brickHeight;
+    border: $themeBorderDefault;
+    border-radius($themeBorderRadius);
+    box-shadow: none;
+    box-sizing: border-box;
+    outline: none;    
+    box-sizing: border-box;        
+}
+
+
+.ui-form-ul {   
+    list-style-type: disc;
+    font-size:14px;
+    margin-left:15px;
+    padding:4px;  
+}
+
+.ui-form-ul .ui-form-li {
+    padding:2px;
+}
+
+
+input:hover, textarea:hover {
+    border: themeBorderHover;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid lighten($themeHeaderColor, 10%);
+    outline: none;
+    border-color: #51a7e8;
+    box-shadow: inset 0 2px 2px rgba(0,0,0,0.075),0 0 5px rgba(81,167,232,0.5);
+    background-color: #F0F5FC;
+    transition: background-color 500ms ease, box-shadow 250ms ease;
+}
+
+input:focus.ui-state-highlight, textarea:focus.ui-state-highlight {
+    border: 1px solid lighten($themeHeaderColor, 10%);
+    outline: none;
+    border-color: #51a7e8;
+    box-shadow: inset 0 2px 2px rgba(0,0,0,0.075),0 0 5px rgba(81,167,232,0.5);
+    background-color: #F1FC0F;
+    transition: background-color 500ms ease, box-shadow 250ms ease;
+}
+
+fieldset.ui-priority-primary {
+    width:100%;
+    padding-left:0;
+    margin-left:0;
+    border-radius: 5px;
+}
+
+fieldset.ui-priority-primary legend {
+    font-size: 18px;
+    padding-right: 6px;
+}
+
+fieldset legend{
+    background-color: $widgetContentBack;
+    border-radius: $themeBorderRadius;
+    margin-left:0px
+}
+
+img {
+   height:auto;
+}
+
+.blockUI img {
+    height:auto;
+    min-width:100%;
+    max-width:100%;
+    width:100%;
+}
+

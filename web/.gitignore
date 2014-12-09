@@ -1,0 +1,15 @@
+#libs
+/node_modules
+/bower_components
+/Gemfile.lock
+/vendor/bundle
+
+#artifacts
+/build
+/.tmp
+/.sass-cache
+/src/public/_WebAngular
+npm-debug.log
+
+#editor
+/.idea

@@ -1,0 +1,74 @@
+.ui-checkbox {
+    width:100%;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    line-height: normal;
+    margin: 0 auto;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    overflow: visible; 
+    min-height: $brickHeight;
+    height: $brickHeight;
+    
+}
+
+.ui-checkbox .ui-checkbox-frame {
+    height: $brickHeight;
+   
+}
+
+.ui-checkbox:hover > .ui-checkbox-frame {
+    
+}
+
+.ui-checkbox .ui-checkbox-hoverbutton {
+    display:none;
+}
+
+.ui-checkbox:hover .ui-checkbox-hoverbutton span{
+    color:white;
+    background-color: none !important;
+}
+
+.ui-checkbox .ui-checkbox-hoverbutton > button.ui-button-icon-only {
+    width: 16px;
+    height: 16px;
+    min-height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+}
+
+.ui-checkbox:hover .ui-checkbox-hoverbutton{
+    display: block;
+}
+
+.ui-checkbox label {
+    text-align: left;
+    cursor: pointer;
+    height: $brickHeight;
+    line-height: $brickHeight;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.ui-checkbox .ui-checkbox-display {
+    width: $brickHeight - ($brickPadding / 2);
+    height: $brickHeight - ($brickPadding / 2);
+    max-height: $brickHeight - ($brickPadding / 2);
+    font-size: $brickHeight * 0.8;
+    padding: $brickHeight * 0.05;
+    z-index: 2;
+    
+}
+
+.ui-checkbox .ui-checkbox-display-frame {
+    width: $brickHeight - ($brickPadding / 2);
+    height: $brickHeight - ($brickPadding / 2);
+
+}
+
+.ui-checkbox .ui-checkbox-label-frame {
+    margin-left: 31px !important;
+}

@@ -1,9 +1,81 @@
 {
-	"name": "web",
-	"version": "0.0.1",
-	"dependencies": {
-		"express":"*",
-		"rabbit.js":"*",
-		"socket.io": ">=0.8"
+    "name": "WebAngular",
+    "version": "0.0.0",
+    "dependencies": {
+        "lodash": "2.4.x",
+        "underscore.string": "2.3.x",
+        "ui-router": "0.0.x",
+        "express": "3.x"
+    },
+    "devDependencies": {
+        "matchdep": "0.1.x",
+        "stylus": "0.x.x",
+        "nib": "1.x.x",
+        "browserify": "3.46.0",
+        "browserify-shim": "3.x.x",
+        "partialify": "3.1.1",
+        "gulp": "3.5.x",
+        "gulp-changed": "0.2.x",
+        "gulp-header": "1.0.x",
+        "gulp-cached": "0.0.x",
+        "gulp-concat": "2.1.x",
+        "gulp-browserify": "0.5.x",
+        "gulp-uglify": "0.2.x",
+        "gulp-livereload": "1.2.x",
+        "gulp-stylus": "0.0.x",
+        "gulp-cssmin": "0.1.x",
+        "gulp-htmlmin": "0.1.x",
+        "gulp-clean": "0.2.x",
+        "gulp-karma": "0.0.x",
+        "gulp-using": "0.0.x",
+        "gulp-tap": "0.1.x",
+        "gulp-shell": "~0.2.4",
+        "gulp-task-listing": "0.2.x",
+        "gulp-filesize": "0.0.6",
+        "gulp-util": "^2.2.14",
+        "gulp-rename": "~1.2.0",
+        "gulp-minify-css": "0.3.x",
+        "gulp-rimraf": "0.1.x",
+        "gulp-jshint": "1.5.x",
+        "jshint-stylish": "0.2.x",
+        "gulp-jsonlint": "0.0.x",
+        "through": "~2.3.4",
+        "vinyl-source-stream": "~0.1.1",
+        "through2": "^0.5.1",
+        "glob": "^4.0.4",
+        "run-sequence": "0.3.x",
+        "gulp-nodemon": "1.0.x",
+        "chai": "1.9.x",
+        "gulp-istanbul": "0.1.x",
+        "gulp-jasmine": "0.2.x",
+        "gulp-mocha": "0.4.x",
+        "gulp-ng-html2js": "~0.1.6",
+        "gulp-watch": "^0.6.2"
+    },
+	"browser":{
+		"jquery":"./src/public/core/jquery.js",
+		"angular": "./src/public/core/angular.js"
+	},
+    "browserify": {
+        "transform": [
+            "partialify",
+            "browserify-shim"
+        ]
+    },
+    "browserify-shim": {
+        "jquery": "$",
+        "jquery-ui": {},
+        "angular": {
+            "exports": "angular"
+        },
+        "angular-animate": {},
+        "angular-cookies": {},
+        "angular-placeholder-shim": {},
+        "angular-resource": {},
+        "angular-route": {},
+        "angular-sanitize": {}
+    },
+	"scripts":{
+		"start":"node src/server/WebAngular.js"
 	}
 }
